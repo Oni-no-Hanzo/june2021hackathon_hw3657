@@ -1,6 +1,6 @@
 ---
-title: "ModernApps Ninja New Course Template"
-linkTitle: "New Course Template"
+title: "June 2021 Hackathon Week"
+linkTitle: "June 2021 Hackathon Week"
 weight: 20
 menu:
   main:
