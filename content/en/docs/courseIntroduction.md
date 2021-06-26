@@ -1,51 +1,83 @@
 ---
-title: Course Introduction
+title: Hackathon Overview and Instructions
 date: 2020-10-12T18:34:25-07:00
 weight: 1004
 ---
 
-- [About this Course](#about-this-course)
-- [Prerequisites](#prerequisites)
-- [Course Input & Feedback](#course-input--feedback)
-- [Content Accuracy and Refresh Cycle](#content-accuracy-and-refresh-cycle)
+- [Hackathon Week Overview](#hackathon-week-overview)
+  - [Prerequisites](#prerequisites)
+  - [Schedule](#schedule)
+- [Instructions](#instructions)
+  - [Report an Issue - Bug or Feature Request -- Hackathon QA Reporter Badge](#report-an-issue---bug-or-feature-request----hackathon-qa-reporter-badge)
+  - [Validate a course or guide -- Hackathon QA Validator Badge](#validate-a-course-or-guide----hackathon-qa-validator-badge)
+  - [Support fellow community members -- Hackathon Support Provider Badge](#support-fellow-community-members----hackathon-support-provider-badge)
+  - [Resolve an issue ticket - Bug or feature request -- Hackathon Triager Badge](#resolve-an-issue-ticket---bug-or-feature-request----hackathon-triager-badge)
+  - [Update Page Content -- Hackathon LFM Committer Badge](#update-page-content----hackathon-lfm-committer-badge)
+  - [Contribute New Content or Features -- Hackathon Content Developer Badge](#contribute-new-content-or-features----hackathon-content-developer-badge)
 - [Thank you for participating!](#thank-you-for-participating)
 
-## About this Course
+## Hackathon Week Overview
 
-{{< youtube 5ScnewvBayk >}}
+Hackathon week provides an opportunity to contribute to community, network with peers and learn and gain experience by opening and resolving issue tickets, make github commits with content updates, or even help with new site features!. 
 
-This course provides an introduction to the ModernApps Learning community. The community is much more than just content and is really intended to be an active community of professionals learning and working towards applying new skills in cloud native technologies.
+You do not need to be a developer, you can be a beginner with github, each step to participate has clear and simple instructions. 
 
-The ModernApps Learning community uses devops tools to deliver all the features provided by the platform to participate in courses, collaboration and other community assets. When you register with the community you fill out an issue ticket. To enroll in a course you will post a new file to the course repository. When you take a test you will modify an existing file in the repository. While registration, enrollment and testing are normal features of Learning Management Systems (LMS), the ModernApps Learning Platform is not an LMS, it is a devops system where each of these features is implemented as a CI/CD workflow using GitHub Actions. This means participating in a course is just like working on a devops project; you will use GitHub messaging to collaborate with peers and open pull requests to edit or post files to a repository to participate in each course.  
+6 new limited edition Digital Badges will be available to participants who complete the simple requirements for each badge. In addition to earning the badges, each of the contributions you make will be reflected on your public github profile!
 
-By the time you have taken your first course, you will have learned these core skills which represent the most common and important skills to begin participating and contributing to a modern devops and/or open source projects.  
+Anyone who opens an issue ticket, validates or updates content, contributes new content or features will be able to earn badges!
 
-While participating in a course gets you started on foundational devops skills, the ModernApps Learning Platform provides a unique opportunity for members to learn and practice devops skills in a real production context. Every aspect of the ModernApps Learning Program is managed openly in conjunction with the community. Our vision, goals, roadmap, planning, code, infrastructure etcetera are all managed by and for the community, which is designed with guidelines and guardrails to help participants learn by doing in a step-by-step guided path towards increasing production-grade experience.  
+While many hackathons focus on building sample coding ideas that may or may not ever be used, in the ModernApps Learning hackathon you will contribute directly to production assets, and the hackathon badges will state clearly that you contributed to production assets!
 
-In this course you will learn the foundational skills to participate in ModernApps Learning courses at the 100 level, including how to register with the community, use community collaboration tools, participate in events, enroll in courses, take tests, and request course completion badges.  
+### Prerequisites  
 
-If you complete all steps in this course, you can request a certificate of completion by following the instructions provided at the end of the course.  
+You must be a member of the ModernApps Ninja community to earn badges. Membership is completely free - to register, it is recommended that you complete the [ModernApps Skills 101 course](https://modernapps.ninja/course/modernappsskills101_ms4043/), which which will walk you through membership registration and also how to (1) open an issue ticket and use a simple, browser based process to (2) post new files and (3) modify existing files on a public GitHub repository. These 3 skills are the 3 most important core skills you need to start actively participating and contributing to any git/github project!
 
-This course is a community effort, to be able to keep up the material, we really need your help to report issues, suggest improvements, or help with the many volunteer opportunities available to support the community.  
+Also note per the details in the sections below, if you complete the [ModernApps Skills 101 course](https://modernapps.ninja/course/modernappsskills101_ms4043/) and submit an issue/feedback ticket during the hackathon week period, you will earn the Hackathon QA Contributor badge
 
-## Prerequisites  
+### Schedule
 
-This course has no prerequisites.
+Each contribution made in accordance with the instructions provided in this document, made during the hackathon timeframe, will be eligible towards earning Hackathon badges, per the requirements listed.
 
-## Course Input & Feedback
+- Hackathon Participation/Contribution Timeframe
+  - Begins: 8:00 AM Pacific Time, 06/25/2021
+  - Concludes: 11:59 PM Pacific Time, 07/03/2021
+- Hackathon Event Schedule:
+  - 8:00 AM Pacific Time, 06/25/2021
+    - Hackathon Participation/Contribution Timeframe Begins
+    - [Hackathon Kickoff Zoom Call]()
+      - After the kickoff call, a recording of the call will be posted to the [ModernApps Learning Youtube Page]()
+  - 8:00 AM Pacific time, 07/02/2021
+    - ModernApps SRE Live! Hackathon Checkin Zoom Call
+      - Topics:
+        - Review Hackathon Progress
+        - Review tickets for issues, feeback and pull requests
+        - Light retro
+  - 11:59 PM Pacific Time, 07/03/2021
+    - Hackathon Participation/Contribution Timeframe Concludes/Event Ends
+    - No contributions submitted after this time will be eligible for meeting requirements to earn the June 2021 Hackathon Badges
 
-Your feedback for this course is critical to help ensure we can improve course content and quality and is greatly appreciated!
+## Instructions
 
-If you see any problems or suggestions for improvement in this course, the community is very grateful for your help. The simplest way to provide your input is to click the Edit this page link on the right nav bar on each page on this site, and it will open a page to a simple web text editor where you can easily make any update or suggested input you have and then click a button to submit your update. If the course administrators approve your update, the commit and each line you update will be shown on your public Github profile and add value to your professional portfolio, and you will be listed as a contributor to the site.
+In future hackathons we intend to focus contribution efforts towards validating new courses, refreshing specific courses, or working towards specific features; However in the June 2021 hackathon, all valid bug reports, feature requests, feedback tickets, contributions to any course, guide or site page will be eligible towards completing digital badge requirements per the instructions in the following subsections. 
 
-If you would prefer to provide feedback through a feedback form, all feedback is crucial to helping the community provide the best content we can. To submit feedback, general questions or support requests, please click the “Open Issue Ticket” link found on the right navigation bar on each page of this course site.
+It will be possible for earning up to 6 Digital Badges, each representing different types of participant activities listed below.
 
-The community thanks you for your feedback and contributions!
+### Report an Issue - Bug or Feature Request -- Hackathon QA Reporter Badge
 
-## Content Accuracy and Refresh Cycle
+Any participant who reports a valid bug or feature request for any course, guide or other site page in the modernapps.ninja domain during the hackathon timeframe is eligible to request the Hackathon QA Reporter Badge
 
-We make a strong effort to keep the content in this course as current as possible, however the Tanzu Portfolio is rapidly growing and there may be times where this course may not include the newest updates. Always refer to the official VMware Tanzu Portfiolio Website and your VMware account team for the latest details on products covered in this course. 
+### Validate a course or guide -- Hackathon QA Validator Badge
 
-As part of our effort to keep this course as up-to-date as possible, this course is on a continuous update lifecycle. This means that the course can be updated at any time, and new content and requirements may be added while you are taking your course. We will make effort to notify members in advance of any significant updates are made to minimize any unexpected changes to course completion requirements. 
+
+
+### Support fellow community members -- Hackathon Support Provider Badge
+
+### Resolve an issue ticket - Bug or feature request -- Hackathon Triager Badge
+
+### Update Page Content -- Hackathon LFM Committer Badge
+
+### Contribute New Content or Features -- Hackathon Content Developer Badge
+
+
 
 ## Thank you for participating!
