@@ -41,7 +41,7 @@
 &lt;li>8:00 AM Pacific Time, 06/25/2021
 &lt;ul>
 &lt;li>Hackathon Participation/Contribution Timeframe Begins&lt;/li>
-&lt;li>&lt;a href="">Hackathon Kickoff Zoom Call&lt;/a>
+&lt;li>&lt;a href="https://modernapps.ninja/event/srelive_6-25-21/">Hackathon Kickoff Zoom Call&lt;/a>
 &lt;ul>
 &lt;li>After the kickoff call, a recording of the call will be posted to the &lt;a href="">ModernApps Learning Youtube Page&lt;/a>&lt;/li>
 &lt;/ul>
@@ -50,12 +50,13 @@
 &lt;/li>
 &lt;li>8:00 AM Pacific time, 07/02/2021
 &lt;ul>
-&lt;li>ModernApps SRE Live! Hackathon Checkin Zoom Call
+&lt;li>&lt;a href="https://modernapps.ninja/event/srelive_7-2-21/">ModernApps SRE Live! Hackathon Checkin Zoom Call&lt;/a>
 &lt;ul>
 &lt;li>Topics:
 &lt;ul>
 &lt;li>Review Hackathon Progress&lt;/li>
 &lt;li>Review tickets for issues, feeback and pull requests&lt;/li>
+&lt;li>Github Projects/Agile project planning&lt;/li>
 &lt;li>Light retro&lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -82,7 +83,7 @@
 &lt;p>To validate a course:&lt;/p>
 &lt;ol>
 &lt;li>Go through any course and complete the requirements to earn the digital badge for completing that course&lt;/li>
-&lt;li>Open a &lt;a href="">General Feedback or Questions&lt;/a> Issue Ticket and provide your feedback for the course. There is currently no specific format for the feedback, we would appreciate if you could in your own words share what you liked about the course, any problems or things you didnt like, any suggestions for course improvements or any other feedback about the course you may have.&lt;/li>
+&lt;li>Open a &lt;a href="https://github.com/ModernAppsNinja/modernappsninja.github.io/issues/new/choose">General Feedback&lt;/a> Issue Ticket and provide your feedback for the course. There is currently no specific format for the feedback, we would appreciate if you could in your own words share what you liked about the course, any problems or things you didnt like, any suggestions for course improvements or any other feedback about the course you may have.&lt;/li>
 &lt;/ol>
 &lt;p>After you have completed these requirements, please keep the url to the digital badge you earned for completing the course, and the issue ticket number and URL for the ticket you used to submit your course feedback, as you will need these items to request your Hackathon digital badge.&lt;/p>
 &lt;h3 id="support-fellow-community-members----hackathon-support-provider-badge">Support fellow community members &amp;ndash; Hackathon Support Provider Badge&lt;/h3>
@@ -100,7 +101,7 @@
 &lt;h3 id="contribute-new-content-or-features----hackathon-content-developer-bad">Contribute New Content or Features &amp;ndash; Hackathon Content Developer Bad&lt;/h3>
 &lt;p>If you provide a new course, lab guide, or submit your technical/educational blog to the tutorials page, you will be eligible for the Hackathon Content Developer Badge.&lt;/p>
 &lt;p>The Tutorials page on modernapps learning provides a collection of links and descriptions to Technical content that is focused on providing education about a technical product or concept related to application modernization and VMware Tanzu. Most tutorials are blogs, but could be a white paper, webinar, external course/workshop or any freely accessible public content that provides technical education on a relevant technical topic. ModernApps learning only provides a description and link to your blog - your content may be hosted on any publically available website and should be free and not require any charge or payment to access. Tutorial topics do not need to be about a Tanzu or other product and may instead focus on learning technical concepts, skills and knowlege related to infrastructure and application modernization. All submitted tutorials must include only respectful and appropriate/professional content and are subject to approval by ModernApps Learning Admins.&lt;/p>
-&lt;p>&lt;a href="">Please Click Here for instructions on submitting a Tutorial&lt;/a>&lt;/p>
-&lt;p>If you would like to create a new course or lab guide, please &lt;a href="">open an issue ticket on the ModernAppsNinja/modernappsninja.github.io repository&lt;/a> and an administrator will respond to you to assist in creating your course or lab guide.&lt;/p>
+&lt;p>&lt;a href="https://modernapps.ninja/blog/adding-a-new-blog-post/">Please Click Here for instructions on submitting a Tutorial&lt;/a>&lt;/p>
+&lt;p>If you would like to create a new course or lab guide, please &lt;a href="https://github.com/ModernAppsNinja/modernappsninja.github.io/issues/new/choose">open a Support Request issue ticket on the ModernAppsNinja/modernappsninja.github.io repository&lt;/a> and an administrator will respond to you to assist in creating your course or lab guide.&lt;/p>
 &lt;p>To request this badge, you will need to provide the URL to the Tutorial listing on the ModernApps Learning tutorials page, or the URL to the pullRequest you used to submit your tutorial.&lt;/p>
 &lt;h2 id="thank-you-for-participating">Thank you for participating!&lt;/h2></description></item></channel></rss>
