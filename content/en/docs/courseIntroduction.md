@@ -18,6 +18,10 @@ weight: 1004
 
 ## Hackathon Week Overview
 
+**Earn up to 6 Limited Edition Hackathon Digital Badges!**
+
+![Hackathon Badges](http://modernapps.ninja/june2021hackathon_hw3657/admin/assets/images/Hackathon%20Badges.png)
+
 Hackathon week provides an opportunity to contribute to community, network with peers and learn and gain experience by opening and resolving issue tickets, make github commits with content updates, or even help with new site features!. 
 
 You do not need to be a developer, you can be a beginner with github, each step to participate has clear and simple instructions. 
