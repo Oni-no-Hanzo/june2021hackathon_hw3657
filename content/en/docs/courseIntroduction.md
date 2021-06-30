@@ -45,7 +45,7 @@ Each contribution made in accordance with the instructions provided in this docu
   - 8:00 AM Pacific Time, 06/25/2021
     - Hackathon Participation/Contribution Timeframe Begins
     - [Hackathon Kickoff Zoom Call](https://modernapps.ninja/event/srelive_6-25-21/)
-      - After the kickoff call, a recording of the call will be posted to the [ModernApps Learning Youtube Page]()
+      - After the kickoff call, a recording of the call will be posted to the [ModernApps Learning Youtube Page](https://youtu.be/337vm0iwDF8)
   - 8:00 AM Pacific time, 07/02/2021
     - [ModernApps SRE Live! Hackathon Checkin Zoom Call](https://modernapps.ninja/event/srelive_7-2-21/)
       - Topics:
