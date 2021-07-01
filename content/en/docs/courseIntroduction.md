@@ -67,6 +67,8 @@ In future hackathons we intend to focus contribution efforts towards validating 
 
 It will be possible for earning up to 6 Digital Badges, each representing different types of participant activities listed below.
 
+**Note:** Instructions for requesting your hackathon badge will be posted on Friday 7/2/21 to this page and to the ModernAppsNinja/Members Github Teams discussion board. We will also review the (automated) process to request your hackathon badge on the [ModernApps SRE Live! Hackathon Checkin Zoom Call](https://modernapps.ninja/event/srelive_7-2-21/).
+
 ### Report an Issue - Bug or Feature Request -- Hackathon QA Reporter Badge
 
 Any participant who reports a valid bug or feature request for any course, guide or other site page in the modernapps.ninja domain during the hackathon timeframe is eligible to request the Hackathon QA Reporter Badge.
