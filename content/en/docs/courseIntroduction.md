@@ -108,7 +108,7 @@ Every ModernApps Learning Course and Lab Guide page has a link on the right navi
 
 To request this badge, you will need to provide the URL to a PullRequest or Commit where you provided an update to a ModernApps Learning Page.
 
-### Contribute New Content or Features -- Hackathon Content Developer Bad
+### Contribute New Content or Features -- Hackathon Content Developer Badge
 If you provide a new course, lab guide, or submit your technical/educational blog to the tutorials page, you will be eligible for the Hackathon Content Developer Badge.
 
 The Tutorials page on modernapps learning provides a collection of links and descriptions to Technical content that is focused on providing education about a technical product or concept related to application modernization and VMware Tanzu. Most tutorials are blogs, but could be a white paper, webinar, external course/workshop or any freely accessible public content that provides technical education on a relevant technical topic. ModernApps learning only provides a description and link to your blog - your content may be hosted on any publically available website and should be free and not require any charge or payment to access. Tutorial topics do not need to be about a Tanzu or other product and may instead focus on learning technical concepts, skills and knowlege related to infrastructure and application modernization. All submitted tutorials must include only respectful and appropriate/professional content and are subject to approval by ModernApps Learning Admins.
