@@ -22,7 +22,7 @@ weight: 1004
 
 ![Hackathon Badges](http://modernapps.ninja/june2021hackathon_hw3657/admin/assets/images/Hackathon%20Badges.png)
 
-Hackathon week provides an opportunity to contribute to community, network with peers and learn and gain experience by opening and resolving issue tickets, make github commits with content updates, or even help with new site features!. 
+Hackathon week provides an opportunity to contribute to community, network with peers, learn and gain experience by opening and resolving issue tickets, make github commits with content updates, or even help with new site features!
 
 You do not need to be a developer, you can be a beginner with github, each step to participate has clear and simple instructions. 
 
@@ -36,7 +36,7 @@ While many hackathons focus on building sample coding ideas that may or may not 
 
 You must be a member of the ModernApps Ninja community to earn badges. Membership is completely free - to register, it is recommended that you complete the [ModernApps Skills 101 course](https://modernapps.ninja/course/modernappsskills101_ms4043/), which which will walk you through membership registration and also how to (1) open an issue ticket and use a simple, browser based process to (2) post new files and (3) modify existing files on a public GitHub repository. These 3 skills are the 3 most important core skills you need to start actively participating and contributing to any git/github project!
 
-Also note per the details in the sections below, if you complete the [ModernApps Skills 101 course](https://modernapps.ninja/course/modernappsskills101_ms4043/) and submit an issue/feedback ticket during the hackathon week period, you will earn the Hackathon QA Contributor badge
+Also note per the details in the sections below, if you complete the [ModernApps Skills 101 course](https://modernapps.ninja/course/modernappsskills101_ms4043/) and submit an issue/feedback ticket during the hackathon week period, you will earn the Hackathon QA Contributor badge.
 
 ### Schedule
 
@@ -49,7 +49,7 @@ Each contribution made in accordance with the instructions provided in this docu
   - 8:00 AM Pacific Time, 06/25/2021
     - Hackathon Participation/Contribution Timeframe Begins
     - [Hackathon Kickoff Zoom Call](https://modernapps.ninja/event/srelive_6-25-21/)
-      - After the kickoff call, a recording of the call will be posted to the [ModernApps Learning Youtube Page](https://youtu.be/337vm0iwDF8)
+      - After the kickoff call, a recording of the call will be posted to the [ModernApps Learning YouTube Page](https://youtu.be/337vm0iwDF8)
   - 8:00 AM Pacific time, 07/02/2021
     - [ModernApps SRE Live! Hackathon Checkin Zoom Call](https://modernapps.ninja/event/srelive_7-2-21/)
       - Topics:
@@ -63,7 +63,7 @@ Each contribution made in accordance with the instructions provided in this docu
 
 ## Instructions
 
-In future hackathons we intend to focus contribution efforts towards validating new courses, refreshing specific courses, or working towards specific features; However in the June 2021 hackathon, all valid bug reports, feature requests, feedback tickets, contributions to any course, guide or site page will be eligible towards completing digital badge requirements per the instructions in the following subsections. 
+In future hackathons we intend to focus contribution efforts towards validating new courses, refreshing specific courses, or working towards specific features. However, in the June 2021 hackathon, all valid bug reports, feature requests, feedback tickets, contributions to any course, guide or site page will be eligible towards completing digital badge requirements per the instructions in the following subsections. 
 
 It will be possible for earning up to 6 Digital Badges, each representing different types of participant activities listed below.
 
