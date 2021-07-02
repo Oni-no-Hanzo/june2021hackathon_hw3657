@@ -21,14 +21,14 @@
 &lt;h2 id="hackathon-week-overview">Hackathon Week Overview&lt;/h2>
 &lt;p>&lt;strong>Earn up to 6 Limited Edition Hackathon Digital Badges!&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="http://modernapps.ninja/june2021hackathon_hw3657/admin/assets/images/Hackathon%20Badges.png" alt="Hackathon Badges">&lt;/p>
-&lt;p>Hackathon week provides an opportunity to contribute to community, network with peers and learn and gain experience by opening and resolving issue tickets, make github commits with content updates, or even help with new site features!.&lt;/p>
+&lt;p>Hackathon week provides an opportunity to contribute to community, network with peers, learn and gain experience by opening and resolving issue tickets, make github commits with content updates, or even help with new site features!&lt;/p>
 &lt;p>You do not need to be a developer, you can be a beginner with github, each step to participate has clear and simple instructions.&lt;/p>
 &lt;p>6 new limited edition Digital Badges will be available to participants who complete the simple requirements for each badge. In addition to earning the badges, each of the contributions you make will be reflected on your public github profile!&lt;/p>
 &lt;p>Anyone who opens an issue ticket, validates or updates content, contributes new content or features will be able to earn badges!&lt;/p>
 &lt;p>While many hackathons focus on building sample coding ideas that may or may not ever be used, in the ModernApps Learning hackathon you will contribute directly to production assets, and the hackathon badges will state clearly that you contributed to production assets!&lt;/p>
 &lt;h3 id="prerequisites">Prerequisites&lt;/h3>
 &lt;p>You must be a member of the ModernApps Ninja community to earn badges. Membership is completely free - to register, it is recommended that you complete the &lt;a href="https://modernapps.ninja/course/modernappsskills101_ms4043/">ModernApps Skills 101 course&lt;/a>, which which will walk you through membership registration and also how to (1) open an issue ticket and use a simple, browser based process to (2) post new files and (3) modify existing files on a public GitHub repository. These 3 skills are the 3 most important core skills you need to start actively participating and contributing to any git/github project!&lt;/p>
-&lt;p>Also note per the details in the sections below, if you complete the &lt;a href="https://modernapps.ninja/course/modernappsskills101_ms4043/">ModernApps Skills 101 course&lt;/a> and submit an issue/feedback ticket during the hackathon week period, you will earn the Hackathon QA Contributor badge&lt;/p>
+&lt;p>Also note per the details in the sections below, if you complete the &lt;a href="https://modernapps.ninja/course/modernappsskills101_ms4043/">ModernApps Skills 101 course&lt;/a> and submit an issue/feedback ticket during the hackathon week period, you will earn the Hackathon QA Contributor badge.&lt;/p>
 &lt;h3 id="schedule">Schedule&lt;/h3>
 &lt;p>Each contribution made in accordance with the instructions provided in this document, made during the hackathon timeframe, will be eligible towards earning Hackathon badges, per the requirements listed.&lt;/p>
 &lt;ul>
@@ -45,7 +45,7 @@
 &lt;li>Hackathon Participation/Contribution Timeframe Begins&lt;/li>
 &lt;li>&lt;a href="https://modernapps.ninja/event/srelive_6-25-21/">Hackathon Kickoff Zoom Call&lt;/a>
 &lt;ul>
-&lt;li>After the kickoff call, a recording of the call will be posted to the &lt;a href="https://youtu.be/337vm0iwDF8">ModernApps Learning Youtube Page&lt;/a>&lt;/li>
+&lt;li>After the kickoff call, a recording of the call will be posted to the &lt;a href="https://youtu.be/337vm0iwDF8">ModernApps Learning YouTube Page&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -76,7 +76,7 @@
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="instructions">Instructions&lt;/h2>
-&lt;p>In future hackathons we intend to focus contribution efforts towards validating new courses, refreshing specific courses, or working towards specific features; However in the June 2021 hackathon, all valid bug reports, feature requests, feedback tickets, contributions to any course, guide or site page will be eligible towards completing digital badge requirements per the instructions in the following subsections.&lt;/p>
+&lt;p>In future hackathons we intend to focus contribution efforts towards validating new courses, refreshing specific courses, or working towards specific features. However, in the June 2021 hackathon, all valid bug reports, feature requests, feedback tickets, contributions to any course, guide or site page will be eligible towards completing digital badge requirements per the instructions in the following subsections.&lt;/p>
 &lt;p>It will be possible for earning up to 6 Digital Badges, each representing different types of participant activities listed below.&lt;/p>
 &lt;p>&lt;strong>Note:&lt;/strong> Instructions for requesting your hackathon badge will be posted on Friday 7/2/21 to this page and to the ModernAppsNinja/Members Github Teams discussion board. We will also review the (automated) process to request your hackathon badge on the &lt;a href="https://modernapps.ninja/event/srelive_7-2-21/">ModernApps SRE Live! Hackathon Checkin Zoom Call&lt;/a>.&lt;/p>
 &lt;h3 id="report-an-issue---bug-or-feature-request----hackathon-qa-reporter-badge">Report an Issue - Bug or Feature Request &amp;ndash; Hackathon QA Reporter Badge&lt;/h3>
