@@ -90,6 +90,12 @@ jobs:
           echo $(echo org_repo="$GITHUB_REPOSITORY") >> $GITHUB_ENV
           org_repo="$GITHUB_REPOSITORY"
           echo $org_repo
+      - name: pull member record file
+        run: |
+          curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
+          "https://raw.githubusercontent.com/ModernAppsNinja/admin-private/main/userdata/members/${{ github.event.sender.login }}_${{ github.event.sender.id }}.yml" \
+          -o /tmp/member_record.yml
+          cat /tmp/member_record.yml
       - name: make assertion to award digital badge to recipient
         run: |
           preferredemailaddress=$(yq e '.preferredEmailAddress' /tmp/member_record.yml)
@@ -137,13 +143,6 @@ jobs:
           "https://raw.githubusercontent.com/${{ env.org_repo }}/main/static/admin/assets/hackathons/badges/qaprovider/cards/member_badge_card_stub.md" \
           -o /tmp/member_badge_card_stub.md
           cat /tmp/member_badge_card_stub.md
-      - name: pull member record file
-        if: env.passing_grade == 'true'
-        run: |
-          curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-          "https://raw.githubusercontent.com/ModernAppsNinja/admin-private/main/userdata/members/${{ github.event.sender.login }}_${{ github.event.sender.id }}.yml" \
-          -o /tmp/member_record.yml
-          cat /tmp/member_record.yml
       - name: prepare hackathon badge card
         run: |
           # combine badge meta, member badge card stub, member github ids and openbadge ids to create new member hackathon badge card file
