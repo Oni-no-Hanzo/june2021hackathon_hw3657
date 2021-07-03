@@ -146,8 +146,8 @@ jobs:
       - name: prepare hackathon badge card
         run: |
           # combine badge meta, member badge card stub, member github ids and openbadge ids to create new member hackathon badge card file
-          cat /tmp/course_meta.yml > /tmp/member_badge_card.md
-          cat /tmp/member_course_card_stub.md >> /tmp/member_badge_card.md
+          cat /tmp/badge_meta.yml > /tmp/member_badge_card.md
+          cat /tmp/member_badge_card_stub.md >> /tmp/member_badge_card.md
           echo "   " >> /tmp/member_badge_card.md
           echo "Member_Github_Account_Login: ${{ github.event.sender.login }}  " >> /tmp/member_badge_card.md
           echo "Member_Github_Account_ID ${{ github.event.sender.id }}  " >> /tmp/member_badge_card.md
@@ -161,9 +161,9 @@ jobs:
           curl -X PUT \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          -d '{"message": "Posting updated member course record card", "content": "'$(cat /tmp/member_badge_card.md.base64)'"}' \
+          -d '{"message": "Posting updated member badge record card", "content": "'$(cat /tmp/member_badge_card.md.base64)'"}' \
           "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/content/english/certs/${{ github.event.repository.name }}.md" \
-          -o /tmp/member_course_card_post_response.json
+          -o /tmp/member_badge_card_post_response.json
       - name: gather ID and slug for modernappsninja members team
         run: |
           curl -s \
@@ -180,14 +180,10 @@ jobs:
           echo members_team_slug=$(cat /tmp/members_team_slug) >> $GITHUB_ENV
       - name: update members discussion board hackathon award thread about new badge award
         run: |
-          curl -X PATCH \
+          curl -X POST \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          -d '{"title":"Welcome to the course team!","body":"Congratulations to @'${{ github.event.sender.login }}' for earning the Hackathon QA Provider Badge! Thank you for contributing to the community!"}' \
-          "https://api.github.com/orgs/modernappsninja/teams/${{ env.members_team_slug }}/discussions/9" \
+          -d '{"body":"Congratulations to @'${{ github.event.sender.login }}' for earning the Hackathon QA Provider Badge! Thank you for contributing to the community!"}' \
+          "https://api.github.com/orgs/modernappsninja/teams/${{ env.members_team_slug }}/discussions/9/comments" \
           -o /tmp/add_course_team_discussion_response.json
           cat /tmp/add_course_team_discussion_response.json
-
-
-# create award post on discussion board
-# setup badge entityid
