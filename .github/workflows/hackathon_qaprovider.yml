@@ -2,8 +2,7 @@ name: hackathon_qaprovider_award
 on:
   push:
     paths:
-    - 'static/admin/userdata/hackathons/qaprovider/awards/**.yml'
-
+    - 'static/admin/userdata/hackathons/badges/qaprovider/awards/**.yml'
 
 
 jobs:
@@ -91,53 +90,46 @@ jobs:
           echo $(echo org_repo="$GITHUB_REPOSITORY") >> $GITHUB_ENV
           org_repo="$GITHUB_REPOSITORY"
           echo $org_repo
-
-      # COURSE DEVELOPERS: This section awards digital badges. Do not uncomment this section until you have created the digital badge for this course and have the badge ID values available
-      # - name: make assertion to award digital badge to recipient
-      #   if: env.passing_grade == 'true'
-      #   run: |
-      #     preferredemailaddress=$(yq e '.preferredEmailAddress' /tmp/member_record.yml)
-      #     badgeclass_entity_id=
-      #     reponame=${{ github.event.repository.name }}
-      #     lorepo=$(echo ${reponame,,})
-      #     echo "lorepo is: ${lorepo}"
-      #     badgrtoken=$(curl -X POST "https://api.badgr.io/o/token" -d "username=${{ secrets.BADGREMAIL }}&password=${{ secrets.BADGRPASSWORD }}" | jq -r '.access_token')
-      #     echo "badgrtoken is: ${badgrtoken}"
-      #     curl -X POST \
-      #     "https://api.badgr.io/v2/badgeclasses/${badgeclass_entity_id}/assertions" \
-      #     --header "Content-Type: application/json" \
-      #     --header "Authorization: Bearer ${badgrtoken}" \
-      #     --data-raw '{
-      #       "recipient": {
-      #         "identity": "'$(yq e '.preferredEmailAddress' /tmp/member_record.yml)'",
-      #         "type": "email",
-      #         "hashed": true
-      #       },
-      #       "evidence": [
-      #         {
-      #           "url": "https://modernappsninjas.github.io/${{ github.event.sender.login }}/cert/'${lorepo}'/"
-      #         }
-      #       ],
-      #       "notify": true
-      #     }' >> /tmp/assert_call_response.json
-      #     cat /tmp/assert_call_response.json
-      # - name: review variables from assertion response
-      #   if: env.passing_grade == 'true'
-      #   run: |
-      #     echo "status.success is : $(jq -r '.status.success' /tmp/assert_call_response.json)"
-      #     jq -r '.status.success' /tmp/assert_call_response.json > /tmp/assert_success
-      #     echo "result.entityId is : $(jq -r '.result[0].entityId' /tmp/assert_call_response.json)"
-      #     jq -r '.result[0].entityId' /tmp/assert_call_response.json > /tmp/badge_entityId
-      #     echo "result.openBadgeId is : $(jq -r '.result[0].openBadgeId' /tmp/assert_call_response.json)"
-      #     jq -r '.result[0].openBadgeId' /tmp/assert_call_response.json > /tmp/badge_openBadgeId
-
-
-
-
+      - name: make assertion to award digital badge to recipient
+        if: env.passing_grade == 'true'
+        run: |
+          preferredemailaddress=$(yq e '.preferredEmailAddress' /tmp/member_record.yml)
+          badgeclass_entity_id=NA5P-dg4Q-WhhXjDcNMcFQ
+          reponame=${{ github.event.repository.name }}
+          lorepo=$(echo ${reponame,,})
+          echo "lorepo is: ${lorepo}"
+          badgrtoken=$(curl -X POST "https://api.badgr.io/o/token" -d "username=${{ secrets.BADGREMAIL }}&password=${{ secrets.BADGRPASSWORD }}" | jq -r '.access_token')
+          echo "badgrtoken is: ${badgrtoken}"
+          curl -X POST \
+          "https://api.badgr.io/v2/badgeclasses/${badgeclass_entity_id}/assertions" \
+          --header "Content-Type: application/json" \
+          --header "Authorization: Bearer ${badgrtoken}" \
+          --data-raw '{
+            "recipient": {
+              "identity": "'$(yq e '.preferredEmailAddress' /tmp/member_record.yml)'",
+              "type": "email",
+              "hashed": true
+            },
+            "evidence": [
+              {
+                "url": "https://modernappsninjas.github.io/${{ github.event.sender.login }}/cert/'${lorepo}'/"
+              }
+            ],
+            "notify": true
+          }' >> /tmp/assert_call_response.json
+          cat /tmp/assert_call_response.json
+      - name: review variables from assertion response
+        run: |
+          echo "status.success is : $(jq -r '.status.success' /tmp/assert_call_response.json)"
+          jq -r '.status.success' /tmp/assert_call_response.json > /tmp/assert_success
+          echo "result.entityId is : $(jq -r '.result[0].entityId' /tmp/assert_call_response.json)"
+          jq -r '.result[0].entityId' /tmp/assert_call_response.json > /tmp/badge_entityId
+          echo "result.openBadgeId is : $(jq -r '.result[0].openBadgeId' /tmp/assert_call_response.json)"
+          jq -r '.result[0].openBadgeId' /tmp/assert_call_response.json > /tmp/badge_openBadgeId
       - name: pull badge meta file
         run: |
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-          "https://raw.githubusercontent.com/${{ env.org_repo }}/main/static/admin/assets/hackathons/badges/qaprovider/cards/qaprovider_meta.yml" \
+          "https://raw.githubusercontent.com/${{ env.org_repo }}/main/static/admin/assets/hackathons/badges/qaprovider/cards/badge_meta.yml" \
           -o /tmp/badge_meta.yml
           cat /tmp/badge_meta.yml
       - name: pull badge data stub
@@ -158,16 +150,14 @@ jobs:
           # combine badge meta, member badge card stub, member github ids and openbadge ids to create new member hackathon badge card file
           cat /tmp/course_meta.yml > /tmp/member_badge_card.md
           cat /tmp/member_course_card_stub.md >> /tmp/member_badge_card.md
+          echo "   " >> /tmp/member_badge_card.md
           echo "Member_Github_Account_Login: ${{ github.event.sender.login }}  " >> /tmp/member_badge_card.md
           echo "Member_Github_Account_ID ${{ github.event.sender.id }}  " >> /tmp/member_badge_card.md
           echo "OpenBadge_EntityId: $(cat /tmp/badge_entityId)" >> /tmp/member_badge_card.md
           echo 'OpenBadge_Url: ['$(cat /tmp/badge_openBadgeId)']('$(cat /tmp/badge_openBadgeId)')' >> /tmp/member_badge_card.md
-          echo "   " >> /tmp/grade_report.pr${{ github.event.number }}.${{ github.event.repository.name }}.md
+          echo "   " >> /tmp/member_badge_card.md
           cat /tmp/member_badge_card.md
-
-# need to base64 badge card
-
-
+          cat /tmp/member_badge_card.md | base64 -w 0 > /tmp/member_badge_card.md.base64
       - name: post  member badge card to member repo certs dir
         run: |
           curl -X PUT \
@@ -176,6 +166,30 @@ jobs:
           -d '{"message": "Posting updated member course record card", "content": "'$(cat /tmp/member_badge_card.md.base64)'"}' \
           "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/content/english/certs/${{ github.event.repository.name }}.md" \
           -o /tmp/member_course_card_post_response.json
+      - name: gather ID and slug for modernappsninja members team
+        run: |
+          curl -s \
+          -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
+          "https://api.github.com/orgs/modernappsninja/teams" \
+          -o /tmp/ninja_teams_list.json
+          # gather members team id
+          cat /tmp/ninja_teams_list.json | jq -r 'map(select(.name=="'Members'")) | .[].id' > /tmp/members_team_id
+          cat /tmp/members_team_id
+          echo members_team_id=$(cat /tmp/members_team_id) >> $GITHUB_ENV
+          # gather members team slug
+          cat /tmp/ninja_teams_list.json | jq -r 'map(select(.name=="'Members'")) | .[].slug' > /tmp/members_team_slug
+          cat /tmp/members_team_slug
+          echo members_team_slug=$(cat /tmp/members_team_slug) >> $GITHUB_ENV
+      - name: update members discussion board hackathon award thread about new badge award
+        run: |
+          curl -X PATCH \
+          -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          -d '{"title":"Welcome to the course team!","body":"Congratulations to @'${{ github.event.sender.login }}' for earning the Hackathon QA Provider Badge! Thank you for contributing to the community!"}' \
+          "https://api.github.com/orgs/modernappsninja/teams/${{ env.members_team_slug }}/discussions/9" \
+          -o /tmp/add_course_team_discussion_response.json
+          cat /tmp/add_course_team_discussion_response.json
 
 
-# post issue ticket to member repo to notify of badge award
+# create award post on discussion board
+# setup badge entityid
