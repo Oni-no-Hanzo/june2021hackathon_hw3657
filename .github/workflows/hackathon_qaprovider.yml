@@ -18,6 +18,10 @@ jobs:
       - name: set source repo as org_repo
         run: |
           echo $(echo org_repo="$GITHUB_REPOSITORY") >> $GITHUB_ENV
+      - name: install yq
+        run: |
+          sudo wget https://github.com/mikefarah/yq/releases/download/v4.6.0/yq_linux_amd64 -O /usr/bin/yq &&\
+          sudo chmod +x /usr/bin/yq
       - name: pull member record file
         run: |
           echo ${{ github.event.commits[0].author.username }}
