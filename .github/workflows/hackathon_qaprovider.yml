@@ -108,7 +108,7 @@ jobs:
           --header "Authorization: Bearer ${badgrtoken}" \
           --data-raw '{
             "recipient": {
-              "identity": "'$(echo ${preferredemailaddress}'",
+              "identity": "'$(echo ${preferredemailaddress})'",
               "type": "email",
               "hashed": true
             },
