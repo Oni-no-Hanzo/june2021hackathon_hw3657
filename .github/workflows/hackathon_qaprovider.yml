@@ -4,7 +4,7 @@ on:
     paths:
     - 'static/admin/userdata/hackathons/badges/qaprovider/awards/**.yml'
 
-
+cat /home/runner/work/_temp/_github_workflow/event.json
 jobs:
   job_verify_membership:
     name: verify_membership
@@ -19,29 +19,23 @@ jobs:
       - name: set source repo as org_repo
         run: |
           echo $(echo org_repo="$GITHUB_REPOSITORY") >> $GITHUB_ENV
-      - name: curl member record file
+      - name: pull member record file
         run: |
-          echo "org_repo is ${{ env.org_repo }}"
+          echo ${{ github.event.commits[0].author.username }}
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-          "https://api.github.com/repos/modernappsninja/admin-private/contents/userdata/members/${{ github.event.sender.login }}_${{ github.event.sender.id }}.yml" \
-          -o /tmp/raw_member_record_curl.json
-          cat /tmp/raw_member_record_curl.json
-      - name: set envar raw_member_curl_name
-        run: |
-          cat /tmp/raw_member_record_curl.json | jq -r '.name' >> /tmp/raw_member_record_curl_name
-          echo raw_member_curl_name=$(cat /tmp/raw_member_record_curl_name) >> $GITHUB_ENV
+          "https://raw.githubusercontent.com/modernappsninjas/${{ github.event.commits[0].author.username }}/main/static/userdata/member_record.yml" \
+          -o /tmp/member_record.yml
+          cat /tmp/member_record.yml
       - name: check if member record already exists to determine if this is a duplicate request
         run: |
-          echo "curl name is: ${{ env.raw_member_curl_name }}"
-          echo "login + id is ${{ github.event.sender.login }}_${{ github.event.sender.id }}"
-          cat /tmp/raw_member_record_curl.json
-          if [ "${{ env.raw_member_curl_name }}" = "${{ github.event.sender.login }}_${{ github.event.sender.id }}.yml" ]
+          authorGitubId=$(echo $(yq e '.preferredEmailAddress' /tmp/member_record.yml))
+          if [ $(echo "${authorGithubId}" ==  "null" ]
           then
-            echo ismember=true >> $GITHUB_ENV
-            echo "the requesting user is a member"
-          else
             echo ismember=false >> $GITHUB_ENV
             echo "the requesting user is not a member"
+          else
+            echo ismember=true >> $GITHUB_ENV
+            echo "the requesting user is a member"
           fi
       - id: ismember
         if: env.ismember == 'true'
@@ -60,7 +54,7 @@ jobs:
       #     curl -X POST \
       #     -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
       #     -H "Accept: application/vnd.github.v3+json" \
-      #     -d '{"event": "COMMENT", "body": "@${{ github.event.sender.login }} You must first join the ModernApps Ninja Organization at https://modernapps.ninja before you can request a hackathon badge. Please open a new badge request after you have completed the free modernapps.ninja community registration. This Pull Request will now be closed, thank you!"}' \
+      #     -d '{"event": "COMMENT", "body": "@${{ github.event.commits[0].author.username }} You must first join the ModernApps Ninja Organization at https://modernapps.ninja before you can request a hackathon badge. Please open a new badge request after you have completed the free modernapps.ninja community registration. This Pull Request will now be closed, thank you!"}' \
       #     "https://api.github.com/repos/${{ env.org_repo }}/pulls/${{ github.event.number }}/reviews" \
       #     -o /tmp/pr_comment_post_response.json
       #     cat /tmp/pr_comment_post_response.json
@@ -93,7 +87,7 @@ jobs:
       - name: pull member record file
         run: |
           curl -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-          "https://raw.githubusercontent.com/ModernAppsNinja/admin-private/main/userdata/members/${{ github.event.sender.login }}_${{ github.event.sender.id }}.yml" \
+          "https://raw.githubusercontent.com/modernappsninjas/${{ github.event.commits[0].author.username }}/main/static/userdata/member_record.yml" \
           -o /tmp/member_record.yml
           cat /tmp/member_record.yml
       - name: make assertion to award digital badge to recipient
@@ -111,13 +105,13 @@ jobs:
           --header "Authorization: Bearer ${badgrtoken}" \
           --data-raw '{
             "recipient": {
-              "identity": "'$(yq e '.preferredEmailAddress' /tmp/member_record.yml)'",
+              "identity": "'$(echo ${preferredemailaddress}'",
               "type": "email",
               "hashed": true
             },
             "evidence": [
               {
-                "url": "https://modernappsninjas.github.io/${{ github.event.sender.login }}/cert/'${lorepo}'/"
+                "url": "https://modernappsninjas.github.io/${{ github.event.commits[0].author.username }}/"
               }
             ],
             "notify": true
@@ -149,9 +143,10 @@ jobs:
           cat /tmp/badge_meta.yml > /tmp/member_badge_card.md
           cat /tmp/member_badge_card_stub.md >> /tmp/member_badge_card.md
           echo "   " >> /tmp/member_badge_card.md
-          echo "Member_Github_Account_Login: ${{ github.event.sender.login }}  " >> /tmp/member_badge_card.md
-          echo "Member_Github_Account_ID ${{ github.event.sender.id }}  " >> /tmp/member_badge_card.md
+          echo "Member_Github_Account_Login: ${{ github.event.commits[0].author.username }}  " >> /tmp/member_badge_card.md
+          echo "   " >> /tmp/member_badge_card.md
           echo "OpenBadge_EntityId: $(cat /tmp/badge_entityId)" >> /tmp/member_badge_card.md
+          echo "   " >> /tmp/member_badge_card.md
           echo 'OpenBadge_Url: ['$(cat /tmp/badge_openBadgeId)']('$(cat /tmp/badge_openBadgeId)')' >> /tmp/member_badge_card.md
           echo "   " >> /tmp/member_badge_card.md
           cat /tmp/member_badge_card.md
@@ -162,7 +157,7 @@ jobs:
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
           -d '{"message": "Posting updated member badge record card", "content": "'$(cat /tmp/member_badge_card.md.base64)'"}' \
-          "https://api.github.com/repos/modernappsninjas/${{ github.event.sender.login }}/contents/content/english/certs/${{ github.event.repository.name }}.md" \
+          "https://api.github.com/repos/modernappsninjas/${{ github.event.commits[0].author.username }}/contents/content/english/certs/${{ github.event.repository.name }}.md" \
           -o /tmp/member_badge_card_post_response.json
       - name: gather ID and slug for modernappsninja members team
         run: |
@@ -183,7 +178,7 @@ jobs:
           curl -X POST \
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          -d '{"body":"Congratulations to @'${{ github.event.sender.login }}' for earning the Hackathon QA Provider Badge! Thank you for contributing to the community!"}' \
+          -d '{"body":"Congratulations to @'${{ github.event.commits[0].author.username }}' for earning the Hackathon QA Provider Badge! Thank you for contributing to the community!"}' \
           "https://api.github.com/orgs/modernappsninja/teams/${{ env.members_team_slug }}/discussions/9/comments" \
           -o /tmp/add_course_team_discussion_response.json
           cat /tmp/add_course_team_discussion_response.json
