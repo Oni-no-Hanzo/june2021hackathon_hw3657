@@ -2,8 +2,8 @@
 ## This Document Provides the Front Matter and Metadata for the Course Information page used in the modernapps.ninja homepage and the member profile page.
 ### Hugo Template Metadata
 title: "June21 Hackathon QA Provider Badge"
-date: "{{ .Date }}"
-draft: true
+date:  
+draft: false
 # meta description
 description: "This document provides details to verify the June21 Hackathon QA Provider Badge was awarded by ModernApps Learning by VMware Tanzu"
 # course thumbnail
