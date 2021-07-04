@@ -31,8 +31,8 @@ jobs:
           cat /tmp/member_record.yml
       - name: check if member record already exists to determine if this is a duplicate request
         run: |
-          authorGitubId=$(echo $(yq e '.preferredEmailAddress' /tmp/member_record.yml))
-          if [ $(echo "${authorGithubId}" ==  "null" ]
+          authorGitubId=$(yq e '.memberGithubId' /tmp/member_record.yml)
+          if [ $(echo "${authorGithubId}") ==  "null" ]
           then
             echo ismember=false >> $GITHUB_ENV
             echo "the requesting user is not a member"
