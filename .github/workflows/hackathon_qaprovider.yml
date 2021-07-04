@@ -4,7 +4,6 @@ on:
     paths:
     - 'static/admin/userdata/hackathons/badges/qaprovider/awards/**.yml'
 
-cat /home/runner/work/_temp/_github_workflow/event.json
 jobs:
   job_verify_membership:
     name: verify_membership
