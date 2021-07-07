@@ -44,28 +44,8 @@ jobs:
         if: env.ismember == 'true'
         run: echo "::set-output name=ismember::true"
 
-
-
-
-# Since this workflow is triggered by push there is no pr, update err message posting steps below to instead open issue ticket on member repo at-mentioning the requesting user to notify them of the validation error
-# also need to open a feature request to update modernappsninjas repos to give member triage level permissions - which I believe should allow them to close issue tickets (verify)
-
-
-      # - name: if not member, post message to pr
-      #   if: env.ismember == 'false'
-      #   run: |
-      #     curl -X POST \
-      #     -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
-      #     -H "Accept: application/vnd.github.v3+json" \
-      #     -d '{"event": "COMMENT", "body": "@${{ github.event.commits[0].author.username }} You must first join the ModernApps Ninja Organization at https://modernapps.ninja before you can request a hackathon badge. Please open a new badge request after you have completed the free modernapps.ninja community registration. This Pull Request will now be closed, thank you!"}' \
-      #     "https://api.github.com/repos/${{ env.org_repo }}/pulls/${{ github.event.number }}/reviews" \
-      #     -o /tmp/pr_comment_post_response.json
-      #     cat /tmp/pr_comment_post_response.json
-
-
-
-
-
+# There is currently no method to notify a user if they are not a member, so for the time being administrators should check membership before approving, and this check will only be used as a backup measure, and in the event that a nonmember attempts to run this workflow it will fail with no notification provided and therefore dependent on the requesting user to request assistance
+# In the future, one potential method we could implement to notify a nonmember user would be to open an issue ticket on the source repository on which they opened a pullrequest, at-mention them with instructions, and immediately close the issue ticket so they can still find it through their notifications but there is no further maintenance requirement for administrators
 
   job_award_badge:
   # call badgr and provision badge ()
@@ -160,7 +140,7 @@ jobs:
           -H "Authorization: token ${{ secrets.NINJABOTGURU }}" \
           -H "Accept: application/vnd.github.v3+json" \
           -d '{"message": "Posting updated member badge record card", "content": "'$(cat /tmp/member_badge_card.md.base64)'"}' \
-          "https://api.github.com/repos/modernappsninjas/${{ github.event.commits[0].author.username }}/contents/content/english/certs/${{ github.event.repository.name }}.md" \
+          "https://api.github.com/repos/modernappsninjas/${{ github.event.commits[0].author.username }}/contents/content/english/certs/${{ github.event.repository.name }}_qaprovider.md" \
           -o /tmp/member_badge_card_post_response.json
       - name: gather ID and slug for modernappsninja members team
         run: |
