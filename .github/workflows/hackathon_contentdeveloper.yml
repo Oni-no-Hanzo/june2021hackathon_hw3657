@@ -76,7 +76,7 @@ jobs:
       - name: make assertion to award digital badge to recipient
         run: |
           preferredemailaddress=$(yq e '.preferredEmailAddress' /tmp/member_record.yml)
-          badgeclass_entity_id=NA5P-dg4Q-WhhXjDcNMcFQ
+          badgeclass_entity_id=xhiOzEClTfqA5IQFhNMwAQ
           reponame=${{ github.event.repository.name }}
           lorepo=$(echo ${reponame,,})
           echo "lorepo is: ${lorepo}"
