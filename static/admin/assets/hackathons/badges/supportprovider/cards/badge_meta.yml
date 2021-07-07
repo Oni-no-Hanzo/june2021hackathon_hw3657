@@ -1,0 +1,22 @@
+---
+## This Document Provides the Front Matter and Metadata for the Course Information page used in the modernapps.ninja homepage and the member profile page.
+### Hugo Template Metadata
+title: "June21 Hackathon Support Provider Badge"
+draft: false
+# meta description
+description: "This document provides details to verify the June21 Hackathon Support Provider Badge was awarded by ModernApps Learning by VMware Tanzu"
+# course thumbnail
+image: "https://media.badgr.com/uploads/badges/bf129bd7-db45-4fa7-9271-6df8298cabb0.png"
+# taxonomy
+tags: ["Hackathon"]
+# teacher
+teacher: "Ninja Admins"
+# duration
+duration: "0 Hours"
+# course fee
+fee: "Free!"
+# apply url
+apply_url: "http://modernapps.ninja/june2021hackathon_hw3657/docs/courseintroduction/"
+# type
+type: "cert"
+---  
