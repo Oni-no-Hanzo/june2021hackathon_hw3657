@@ -1,0 +1,1 @@
+This directory hosts hackathon badge request files which, upon PR approval, are automatically processed. Please follow the instructions in the hackathon documentation before posting any file to this repository.
